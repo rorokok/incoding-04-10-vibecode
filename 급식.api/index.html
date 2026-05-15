@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 급식 - 자운고등학교</title>
+    <!-- Pretendard Font -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container">
+        <header class="glass-header">
+            <div class="header-title">
+                <h1>🍽️ 오늘의 급식</h1>
+                <p class="subtitle">자운고등학교</p>
+            </div>
+            
+            <div class="date-controls">
+                <button id="prev-day" class="icon-btn" aria-label="이전 날짜" title="이전 날짜"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="date-picker-wrapper">
+                    <input type="date" id="date-picker" class="date-input">
+                    <span id="display-date" class="display-date">로딩 중...</span>
+                </div>
+                <button id="next-day" class="icon-btn" aria-label="다음 날짜" title="다음 날짜"><i class="fa-solid fa-chevron-right"></i></button>
+                <button id="today-btn" class="text-btn">오늘</button>
+            </div>
+        </header>
+
+        <section id="meal-container" class="meal-container">
+            <!-- 로딩 스피너 -->
+            <div id="loading" class="loading-state">
+                <div class="spinner"></div>
+                <p>급식 정보를 불러오는 중입니다...</p>
+            </div>
+            
+            <!-- 결과 표시 영역 (JS로 동적 추가됨) -->
+            <div id="meal-content" class="meal-content hidden">
+                <!-- 여기에 조식, 중식, 석식 카드가 들어갑니다. -->
+            </div>
+
+            <!-- 에러 및 정보 없음 상태 -->
+            <div id="empty-state" class="empty-state hidden">
+                <i class="fa-regular fa-face-frown-open empty-icon"></i>
+                <p id="empty-message">해당 날짜의 급식 정보가 없습니다.</p>
+            </div>
+        </section>
+        
+        <footer>
+            <p>데이터 제공: NEIS 교육정보 개방 포털</p>
+        </footer>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
